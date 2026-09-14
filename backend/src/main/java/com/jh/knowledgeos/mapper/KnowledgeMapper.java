@@ -1,0 +1,3 @@
+package com.jh.knowledgeos.mapper;
+import com.jh.knowledgeos.domain.*;import org.apache.ibatis.annotations.Param;import java.util.*;
+public interface KnowledgeMapper{int insertCard(KnowledgeCard c);int insertClaim(Claim c);List<KnowledgeCard> listCards(@Param("knowledgeBaseId")Long id);List<Claim> listClaims(@Param("knowledgeBaseId")Long id);int updateCardStatus(@Param("knowledgeCode")String c,@Param("status")String s);int updateClaimStatus(@Param("claimCode")String c,@Param("status")String s);int insertTrace(@Param("queryId")String q,@Param("knowledgeBaseId")Long kb,@Param("query")String query,@Param("traceJson")String trace,@Param("answer")String answer);Map<String,Object> getTrace(@Param("queryId")String q);}
